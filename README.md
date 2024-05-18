@@ -17,7 +17,7 @@ This is a very simple music player. It has functional previous , next and play b
 - Feature 3: It has play button, pause button, next and previous buttons which are also functional.
 
 ## Demo
-You can see a live demo of the project [here]([http://example.com](https://debarghya21.github.io/My-Spotify-Clone/)).
+You can see a live demo of the project [here](https://debarghya21.github.io/My-Spotify-Clone/).
 
 ## Installation
 User can run the project easily with the help of Open with live server in the VS Code.
