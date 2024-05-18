@@ -210,7 +210,7 @@ body {
     display: none;
 }
 
-@media (max-width: 444px) { /* It is used for making the media responsive. */
+@media (max-width: 444px) { /* It is used for making the page responsive. */
     .left{
         
         position: absolute;
