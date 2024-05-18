@@ -1,7 +1,7 @@
 console.log("Lets write some javascript");
 let songs;
 let currentSong = new Audio();
-function secondsToMinutesSeconds(totalSeconds) {
+function secondsToMinutesSeconds(totalSeconds) { // It is used for converting seconds to minute seconds.
     totalSeconds = Math.round(Number(totalSeconds));
 
     // Calculate minutes and seconds
@@ -32,7 +32,7 @@ async function getSongs(){
     }
     return songs;
 }
-const playMusic = (track,pause=false)=>{
+const playMusic = (track,pause=false)=>{ // It is used for playing the music and showing the name.
     //let audio = new Audio("/songs/"+track);
     currentSong.src="/My-Spotify-Clone/songs/"+track;
     if(!pause){
@@ -55,7 +55,7 @@ async function main() {
     console.log(songs);
     playMusic(songs[0],true);
     let songUL = document.querySelector(".songLists").getElementsByTagName("ul")[0];
-    for (const song of songs) {
+    for (const song of songs) { // It is used for displaying the songs in the songlist.
         songUL.innerHTML = songUL.innerHTML + `
         <li>
         <img class="invert" src="music.svg" alt="">
@@ -72,13 +72,13 @@ async function main() {
        </li>`
       
     }
-   Array.from(document.querySelector(".songLists").getElementsByTagName("li")).forEach(e=>{
+   Array.from(document.querySelector(".songLists").getElementsByTagName("li")).forEach(e=>{ // It is used for playing music on clicking.
     e.addEventListener("click",element => {
         console.log(e.querySelector(".info").firstElementChild.innerHTML)
         playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim())
 } )
    })
-   play.addEventListener("click", ()=>{
+   play.addEventListener("click", ()=>{ // It is used for handling the play and the pause button.
     if(currentSong.paused){
         currentSong.play();
         play.src="pause.svg";
@@ -87,30 +87,30 @@ async function main() {
         play.src="play.svg";
     }
    })
-   currentSong.addEventListener("timeupdate", ()=>{
+   currentSong.addEventListener("timeupdate", ()=>{ // It is used for time update on the top of the seekbar.
     console.log(currentSong.currentTime, currentSong.duration)
     document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`
     document.querySelector(".circle").style.left = (currentSong.currentTime/currentSong.duration)*100 + "%"
 })
-document.querySelector(".seekbar").addEventListener("click", e=>{
+document.querySelector(".seekbar").addEventListener("click", e=>{ // It helps to forward the music in the seekbar.
     let percent = (e.offsetX/e.target.getBoundingClientRect().width) * 100;
     document.querySelector(".circle").style.left = percent + "%";
     currentSong.currentTime = (currentSong.duration * percent)/100;
     
 })
-document.querySelector(".hamburger").addEventListener("click", ()=>{
+document.querySelector(".hamburger").addEventListener("click", ()=>{ // It is used to make the hamburger icon functional incase of small screen.
     document.querySelector(".left").style.left="0";
 })
-document.querySelector(".close").addEventListener("click", ()=>{
+document.querySelector(".close").addEventListener("click", ()=>{ // It is used to make the close button functional incase of small screen.
     document.querySelector(".left").style.left="-120%";
 })
-previous.addEventListener("click", ()=>{
+previous.addEventListener("click", ()=>{ // It is used for playing the previous song.
     let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
     if(index - 1 >= 0){
         playMusic(songs[index-1]);
     }
 })
-next.addEventListener("click", ()=>{
+next.addEventListener("click", ()=>{ // It is used for playing the next song.
     let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
     if(index + 1 < songs.length ){
         playMusic(songs[index+1]);
