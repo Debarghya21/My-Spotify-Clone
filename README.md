@@ -6,6 +6,7 @@
 - [Features](#features)
 - [Demo](#demo)
 - [Installation](#installation)
+- [Prerequisites](#Prerequisites)
 
 
 ## Introduction
@@ -22,7 +23,7 @@ You can see a live demo of the project [here](https://debarghya21.github.io/My-S
 ## Installation
 User can run the project easily with the help of Open with live server in the VS Code.
 
-### Prerequisites
+## Prerequisites
 List any prerequisites here, for example:
 - HTML
 - CSS
