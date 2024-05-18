@@ -15,7 +15,7 @@
     background-color: black;
     color: white;
 }
-.invert{
+.invert{ /* It inverts the color of the svg */
     filter: invert(1);
 }
 .bg-grey{
