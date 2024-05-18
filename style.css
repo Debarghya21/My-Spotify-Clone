@@ -209,7 +209,8 @@ body {
     cursor: grab;
     display: none;
 }
-@media (max-width: 444px) {
+
+@media (max-width: 444px) { /* It is used for making the media responsive. */
     .left{
         
         position: absolute;
